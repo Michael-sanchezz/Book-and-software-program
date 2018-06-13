@@ -1,0 +1,63 @@
+import java.util.Scanner;
+import java.text.NumberFormat;
+public class Product 
+{
+	
+	protected static int count = 0;
+	protected static int jspcount = 0;
+	protected static int sqlcount = 0;
+	protected static int Neoncount = 0;
+	
+	public String author;
+	
+	private String code;
+	private String description;
+	private double price;			
+			//the constructor creates an instance of the class and intialize the instance variables to specify values.
+			
+			//the set an get methods for the code variable
+			public void setCode(String code) // Assign data to the instance variable
+			{
+				this.code = code;
+			}
+			
+			public String getCode() //returns the data that is stored in the instance variable
+			{
+				return code;
+			}			
+			//the set an get methods for the description variable
+			public void setDescription(String description)
+			{
+				this.description = description;
+			}			
+			public String getDescription()
+			{
+				return description;
+			}
+			
+			//the set an get methods for the price variable
+			public void setPrice(double price)
+			{
+				this.price = price;
+			}
+			
+			public double getPrice()
+			{
+				return price;
+			}
+			// a custom get method for the price variable to format the price
+			public String getPriceFormatted()
+			{
+				NumberFormat currency = NumberFormat.getCurrencyInstance();
+			
+				return currency.format(price);
+			}	
+			public String toString()//using this overwrites default java toString()
+			{
+				return description;
+			}
+			public static int getCount()
+			{
+				return count;
+			}
+}
