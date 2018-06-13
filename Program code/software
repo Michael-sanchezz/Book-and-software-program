@@ -1,0 +1,26 @@
+public class Software extends Product{
+	private String version;
+	public Software()
+	{
+		super();//call the constructor from parent class
+		
+	
+	}	
+	//set a method to assign a value(Setter)
+	public void setVersion(String version)
+	{
+		this.version=version;
+	}
+	public String getversion()
+	{
+		return version;
+	}
+
+//overiding a method
+	@Override
+public String toString()
+{
+
+	return super.toString() + " Version: " + version;//"version" is subclass and super.toString() is parent class
+}
+}
