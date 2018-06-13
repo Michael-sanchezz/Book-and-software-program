@@ -1,0 +1,50 @@
+public class ProductDB 
+{
+public static Product getProduct(String productCode)
+{
+	Product p = null;
+	if(productCode.equalsIgnoreCase("java") || productCode.equalsIgnoreCase("jsp") || productCode.equalsIgnoreCase("mysql"))
+	{
+		Book b=new Book();
+		
+		if(productCode.equalsIgnoreCase("java"))
+		{
+			b.setCode(productCode);
+			b.setDescription("java programming");
+			b.setPrice(57.50);
+			b.setAuthor("Super man");
+			b.count++;
+		}
+	
+		else if(productCode.equalsIgnoreCase("jsp"))
+		{
+			b.setCode(productCode);
+			b.setDescription("jsp programming");
+			b.setPrice(67.50);
+			b.setAuthor("Spider man");
+			b.jspcount++;
+		}
+		
+		else if(productCode.equalsIgnoreCase("mysql"))
+		{
+			b.setCode(productCode);
+			b.setDescription("mysql programming");
+			b.setPrice(59.50);
+			b.setAuthor("Aqua man");
+			b.sqlcount++;
+		}
+		p=b;
+	}
+		else if(productCode.equalsIgnoreCase("eclipseNeon"))
+		{
+			Software s=new Software();
+			s.setCode("Eclipse Neon");
+			s.setDescription("Eclipse Neon");
+			s.setPrice(0.0);
+			s.setVersion("4.231");
+			s.Neoncount++;
+			p=s;
+		}
+		return p;
+	}
+}
