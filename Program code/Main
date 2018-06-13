@@ -1,0 +1,40 @@
+import java.util.Scanner;
+import java.text.NumberFormat;
+public class ProductApp 
+{
+	private static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args)
+	{
+		System.out.println("book and software list application\n");
+		
+		System.out.println("enter program? y/n");
+
+		String choice= sc.next();
+		while(choice.equalsIgnoreCase("y"))
+	{
+			System.out.println("code examples: java, jsp, mysql, eclipseneon");
+			System.out.println("enter code");
+			String pcode=sc.next();
+			Product p = ProductDB.getProduct(pcode);
+
+			if(p!=null)	
+			{
+				System.out.println("\nPRODUCT\n"+ "code: " + p.getCode() +
+						"\nprice: " + NumberFormat.getCurrencyInstance().format(p.getPrice()) + "\n" +
+						"Description: " +p.toString());//returns the subclass method because p=subclass in ProductDB
+	
+				System.out.println("continue ? y/n");
+				choice = sc.next();
+			}
+			else
+			{
+				System.out.println("No such Product");
+			}		
+	}
+		System.out.println("items selected");
+		System.out.println("java " + Product.getCount() + "\n"+	"jsp " +Product.jspcount +  "\nsql "+ Product.sqlcount +
+				"\neclipse " +Product.Neoncount);
+		System.out.println("application ended");
+	}
+}
+
