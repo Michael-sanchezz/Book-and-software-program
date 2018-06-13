@@ -1,0 +1,21 @@
+
+public class Book extends Product
+{
+	private String author;
+	public Book()
+	{
+		super();//call the constructor from parent class
+		
+	}	
+	//set a method to assign a value(Setter)
+	public void setAuthor(String author)
+	{
+		this.author=author;
+	}
+//overiding a method
+	@Override
+public String toString()
+{
+	return super.toString() + " by " +author;//"author" is subclass and super.toString() is parent class
+}
+}
